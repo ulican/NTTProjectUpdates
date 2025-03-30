@@ -1,0 +1,10 @@
+package com.myapp.project.repository;
+
+import com.myapp.project.domain.Task;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface TaskRepository extends JpaRepository<Task, Long> {
+    List<Task> findByOwnerId(Long ownerId);
+}
